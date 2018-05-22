@@ -1,12 +1,12 @@
 version: '3'
 services:
   web:
+    image: mbchoa/jsonadmin-web-app:1.1.0
     environment:
       - REACT_APP_GRAPHQL_URL=http://api/graphql
-    build: ./client
     ports:
       - "3000:80"
   api:
-    build: ./graphql-gateway
+    image: mbchoa/jsonadmin-graphql-gateway:1.1.0
     ports:
       - "3001:3001"
